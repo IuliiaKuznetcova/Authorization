@@ -1,7 +1,7 @@
 import org.testng.annotations.Test;
 
-
-public class CheckSearchGrowLab extends TestBase{
+// отрабатывают все три теста
+public class CheckSearchGrowLab extends TestBaseCheck {
 
 
     //test negativ pass 123656
@@ -9,8 +9,8 @@ public class CheckSearchGrowLab extends TestBase{
     public void ourTestNegativpass() throws InterruptedException {
         managerNegativPass();
         Thread.sleep(1000);
-        bagRepotInvalidTrue();
-        pageLogin();
+        bagRepotClientTrue();
+
     }
 
     //test positiv billye@example.com  123456
@@ -18,7 +18,7 @@ public class CheckSearchGrowLab extends TestBase{
     public void managerAuthTest() throws InterruptedException {
         managerAuth();
         Thread.sleep(1000);
-        bagRepotInvalidFalshe();
+        bagRepotClientFalshe();
         pageLogin();
     }
 
@@ -26,10 +26,10 @@ public class CheckSearchGrowLab extends TestBase{
     public void GoodAuthafterBadAuth() throws InterruptedException {
         //try bad auth
         managerNegativPass();
-        bagRepotInvalidTrue();
+        bagRepotClientTrue();
         //try manager auth
         managerAuth();
-        bagRepotInvalidFalshe();//checkClientsLink();
+        bagRepotClientFalshe();//checkClientsLink();
         pageLogin();
     }
 
